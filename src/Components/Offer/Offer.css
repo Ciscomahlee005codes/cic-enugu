@@ -1,0 +1,81 @@
+.offer-container {
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding-top: 70px;
+}
+
+/* Hero */
+.offer-hero {
+  padding: 100px 120px 60px;
+  background: #f4f9ff;
+  text-align: left;
+}
+
+.offer-hero h1 {
+  font-size: 2.8rem;
+  color: #0052cc;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.offer-hero p {
+  font-size: 1.15rem;
+  color: #333;
+  max-width: 850px;
+  line-height: 1.8;
+}
+
+/* Offer Cards */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  padding: 60px 120px;
+}
+
+.offer-card {
+  background: white;
+  padding: 35px 28px;
+  border-radius: 12px;
+  text-align: left;
+  border: 1px solid #e0e7ff;
+  transition: 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-color: #0066ff;
+}
+
+.offer-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #0052cc;
+  font-weight: 600;
+}
+
+.offer-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Icons */
+.offer-icon {
+  font-size: 2.8rem;
+  color: #0066ff;
+  margin-bottom: 18px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .offer-hero,
+  .offer-grid {
+    padding: 70px 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .offer-hero {
+    text-align: center;
+  }
+}

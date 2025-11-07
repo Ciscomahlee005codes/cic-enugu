@@ -1,0 +1,331 @@
+:root {
+  --primary-blue: #003b73;
+  --accent-blue: #015fc9;
+  --soft-bg: #f7faff;
+  --text-dark: #1f1f1f;
+  --text-light: #6c6c6c;
+  --white: #ffffff;
+  --radius: 10px;
+}
+
+/* =============== PAGE WRAPPER =============== */
+.page-wrapper {
+  position: relative;
+}
+.news-page {
+  width: 100%;
+  background: var(--soft-bg);
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =============== HEADER =============== */
+.news-header {
+  width: min(1200px, 92%);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.news-header h1 {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.news-header p {
+  font-size: 16px;
+  color: var(--text-light);
+  margin-top: 10px;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+/* =============== CATEGORY FILTER =============== */
+.categories {
+  width: min(1200px, 92%);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.categories button {
+  background: var(--white);
+  border: 1px solid #e5e8ef;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.categories button.active,
+.categories button:hover {
+  background: var(--accent-blue);
+  color: var(--white);
+  border-color: var(--accent-blue);
+}
+
+/* =============== CONTENT WRAPPER =============== */
+.news-content {
+  width: min(1200px, 92%);
+  display: flex;
+  gap: 30px;
+}
+
+/* =============== NEWS CARDS =============== */
+.news-list {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.news-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 0 0 20px 0;
+  border: 1px solid #e8edf5;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.news-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.tag {
+  background: var(--accent-blue);
+  color: var(--white);
+  font-size: 12px;
+  padding: 4px 10px;
+  display: inline-block;
+  border-radius: 20px;
+  margin: 12px;
+}
+
+.date {
+  margin: 0 12px 5px;
+  font-size: 13px;
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.news-card h3 {
+  font-size: 20px;
+  margin: 0 12px;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.news-card p {
+  font-size: 15px;
+  margin: 10px 12px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.read-more {
+  margin: 0 12px;
+  background: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+.read-more:hover {
+  background: var(--accent-blue);
+}
+
+/* =============== SIDEBAR =============== */
+.news-sidebar {
+  flex: 1.1;
+  background: var(--white);
+  padding: 25px;
+  border-radius: var(--radius);
+  border: 1px solid #e8edf5;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  height: fit-content;
+}
+
+.filter-group h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--primary-blue);
+}
+
+.filter-group ul {
+  margin-bottom: 20px;
+  padding-left: 18px;
+}
+
+.filter-group ul li {
+  font-size: 14px;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+/* =============== SUBSCRIBE =============== */
+.news-subscribe h3 {
+  font-size: 18px;
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+}
+
+.news-subscribe input {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--radius);
+  border: 1px solid #ccd3df;
+  margin-bottom: 10px;
+}
+
+.news-subscribe button {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--radius);
+  background: var(--accent-blue);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.news-subscribe button:hover {
+  background: var(--primary-blue);
+}
+/* blur background */
+.blur-bg {
+  filter: blur(3px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* modal styles */
+.news-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  animation: fadeIn .3s ease-in-out;
+}
+
+.news-modal-content {
+  background: white;
+  width: min(600px, 90%);
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  animation: slideUp .35s ease;
+}
+
+.news-modal-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.news-modal-content h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: var(--primary-blue);
+}
+
+.modal-date {
+  font-size: 13px;
+  color: var(--accent-blue);
+  margin-bottom: 10px;
+}
+
+.modal-text {
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+/* Change blur only for content, not modal */
+.news-page-content.blur-bg {
+  filter: blur(3px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* modal already fixed in your CSS */
+.news-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* start from top to avoid navbar */
+  padding-top: 100px; /* space from navbar */
+  z-index: 100; /* ensure above navbar */
+  animation: fadeIn .3s ease-in-out;
+  overflow-y: auto; /* allow scrolling if screen too small */
+}
+
+/* modal content box */
+.news-modal-content {
+  background: white;
+  width: min(600px, 90%);
+  max-height: 80vh; /* prevent overflow full screen */
+  border-radius: 12px;
+  position: relative;
+  animation: slideUp .35s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+/* scrollable content inside modal */
+.modal-scroll {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* close button stays at top-right */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+  z-index: 10;
+  background: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+/* Animations */
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes slideUp { from {transform: translateY(30px); opacity:0;} to {transform: translateY(0); opacity:1;} }
+
+/* =============== RESPONSIVE =============== */
+@media (max-width: 950px) {
+  .news-content {
+    flex-direction: column;
+  }
+}
