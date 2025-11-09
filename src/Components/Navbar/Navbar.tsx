@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import cicLogo from "../../assets/cic-logo.png"
 import "./Navbar.css";
+import { NavLink } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,9 +17,9 @@ const Navbar: React.FC = () => {
         {/* ✅ Close Button */}
         <button className="close-btn" onClick={() => setMenuOpen(false)}>✕</button>
         
-        <a href="#">Home</a>
-        <a href="#">Admission</a>
-        <a href="#">Students</a>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/admission/portal">Admission</NavLink>
+        <NavLink to="/student/auth">Students</NavLink>
         <a href="#">Staff</a>
         <button className="apply-btn">Apply Now</button>
       </nav>

@@ -1,0 +1,83 @@
+body {
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.auth-image {
+  flex: 1;
+  background: url('../assets/cic-bg-4.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.auth-form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: white;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-box h2 {
+  margin-bottom: 1.5rem;
+  color: #003B73;
+}
+
+.form-box input {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-box button {
+  background-color: #1c2a61;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-box button:hover {
+  background-color: #0a2d9e;
+}
+
+.form-box p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #444;
+  cursor: pointer;
+}
+
+.form-box span {
+  color: #003B73;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-image {
+    height: 30vh;
+  }
+
+  .auth-form {
+    height: 70vh;
+  }
+}

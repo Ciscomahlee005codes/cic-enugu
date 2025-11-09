@@ -1,26 +1,29 @@
-import About from "./Components/About/About"
-import ContactPage from "./Components/Contact/ContactPage"
-import Footer from "./Components/Footer/Footer"
-import GalleryPage from "./Components/Gallery/GalleryPage"
-import Hero from "./Components/Hero/Hero"
-import Map from "./Components/Map/Map"
+import { Route, Routes } from "react-router-dom"
 import Navbar from "./Components/Navbar/Navbar"
-import NewsPage from "./Components/News/NewsPage"
-import Offer from "./Components/Offer/Offer"
+import AdmissionHome from "./Pages/Admission/AdmissionHome"
+import Register from "./Pages/Admission/Register"
+import HomePage from "./Pages/Home/HomePage"
+import AdmissionStatus from "./Pages/Admission/AdmissionStatus"
+import PaymentPage from "./Pages/Admission/PaymentPage"
+import Onboarding from "./Pages/Admission/Onboarding"
+import StudentAuthForm from "./Students/StudentAuthForm"
 
 function App() {
 
   return (
     <>
     <Navbar />
-    <Hero />
-    <About />
-    <Offer />
-    <NewsPage />
-    <GalleryPage />
-    <ContactPage />
-    <Map />
-    <Footer />
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/admission/portal" element={<AdmissionHome />} />
+      <Route path="/admission/register" element={ <Register />} />
+      <Route path="/admission/status" element={<AdmissionStatus />} />
+       <Route path="/payment/form" element={<PaymentPage />} />
+       <Route path="/admission/onboarding" element={<Onboarding />} />
+
+       {/* Student Portal */}
+       <Route path="/student/auth" element={<StudentAuthForm />} />
+    </Routes> 
     </>
   )
 }
