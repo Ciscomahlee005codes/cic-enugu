@@ -1,0 +1,107 @@
+.payfees-container {
+  max-width: 600px;
+  margin: 50px auto;
+  width: 100%;
+  padding: 25px;
+  background: #f5f8ff;
+  border-radius: 12px;
+  min-height: 80vh;
+}
+
+.student-info-card {
+  display: flex;
+  align-items: center;
+  background: #003b73;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.student-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid white;
+}
+
+.student-info-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.student-info-card p {
+  margin: 2px 0 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.term-select, .payment-method {
+  margin-bottom: 20px;
+}
+
+.term-select label, .payment-method label {
+  font-weight: 600;
+  color: #003b73;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.term-select select, .payment-method select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccd3df;
+  font-size: 14px;
+}
+
+.fees-list {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.fee-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.fee-item.total {
+  font-size: 16px;
+  font-weight: 700;
+  border-top: 1px solid #ccd3df;
+  padding-top: 8px;
+}
+
+.pay-btn {
+  width: 100%;
+  padding: 12px;
+  background: #003b73;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pay-btn:hover {
+  background: #015fc9;
+}
+
+/* Responsive */
+@media(max-width: 480px){
+  .student-info-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .student-avatar {
+    margin-bottom: 10px;
+  }
+}

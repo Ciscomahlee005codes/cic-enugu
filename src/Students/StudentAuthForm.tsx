@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import './StudentAuthForm.css';
 
 const StudentAuthForm: React.FC = () => {
@@ -13,6 +14,7 @@ const StudentAuthForm: React.FC = () => {
     uniqueId: ''
   });
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate(); // added navigate
 
   const handleToggleForm = () => {
     setFormData({
@@ -43,7 +45,7 @@ const StudentAuthForm: React.FC = () => {
     simulateLoading(() => {
       console.log('Login:', formData);
       alert('Logged in successfully!');
-      // TODO: integrate with Firebase/Auth backend
+      navigate('/studentdashboard/home'); // redirect to dashboard
     });
   };
 
@@ -55,7 +57,7 @@ const StudentAuthForm: React.FC = () => {
     simulateLoading(() => {
       console.log('Sign Up:', formData);
       alert('Signed up successfully!');
-      // TODO: integrate with Firebase/Auth backend
+      navigate('/studentdashboard/home'); // redirect to dashboard
     });
   };
 

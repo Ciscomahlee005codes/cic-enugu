@@ -1,0 +1,202 @@
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: #003b73;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(0);
+  transition: 0.35s ease-in-out;
+  z-index: 300;
+}
+
+/* MOBILE Hidden by default */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* Sidebar Header */
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.sidebar-header p {
+  margin: 5px 0 20px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* Links */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+.sidebar-menu li {
+  margin-bottom: 12px;
+}
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.link:hover,
+.link.active {
+  background: #015fc9;
+}
+
+/* Logout Button */
+.logout-btn {
+  background: #e53935;
+  color: aliceblue;
+  border: none;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logout-btn:hover {
+  background: #c62828;
+}
+
+/* Mobile Buttons */
+.menu-btn, .close-btn {
+  background: #003b73;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 22px;
+  cursor: pointer;
+  position: fixed;
+  z-index: 500;
+}
+
+.menu-btn {
+  top: 15px;
+  left: 15px;
+}
+
+/* Hide menu button when sidebar is open */
+.menu-btn.hide {
+  display: none;
+}
+
+/* Close button hidden by default */
+.close-btn {
+  top: 15px;
+  right: 15px;
+  display: none;
+}
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Box */
+.modal {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.modal h3 {
+  margin-bottom: 12px;
+  color: #003b73;
+}
+
+.modal p {
+  margin-bottom: 20px;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn-cancel {
+  background: #f5f5f5;
+  color: #003b73;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1;
+  transition: 0.3s;
+}
+
+.btn-cancel:hover {
+  background: #e2e8f0;
+}
+
+.btn-logout {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1;
+  transition: 0.3s;
+}
+
+.btn-logout:hover {
+  background: #c62828;
+}
+
+/* Show hamburger ONLY on mobile */
+@media (min-width: 769px) {
+  .menu-btn {
+    display: none;
+  }
+}
+
+/* Show close button ONLY when sidebar open on mobile */
+.sidebar.open .close-btn {
+  display: block;
+}
+/* Responsive */
+@media(max-width: 480px){
+  .modal-actions {
+    flex-direction: column;
+  }
+  .btn-cancel, .btn-logout {
+    width: 100%;
+  }
+}
