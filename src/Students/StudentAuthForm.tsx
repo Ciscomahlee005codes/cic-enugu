@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import './StudentAuthForm.css';
@@ -11,10 +11,11 @@ const StudentAuthForm: React.FC = () => {
     phone: '',
     password: '',
     confirmPassword: '',
-    uniqueId: ''
+    uniqueId: '',
+    role: 'student', // default role
   });
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate(); // added navigate
+  const navigate = useNavigate();
 
   const handleToggleForm = () => {
     setFormData({
@@ -23,12 +24,13 @@ const StudentAuthForm: React.FC = () => {
       phone: '',
       password: '',
       confirmPassword: '',
-      uniqueId: ''
+      uniqueId: '',
+      role: 'student',
     });
     setIsLoginForm(prev => !prev);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -42,24 +44,36 @@ const StudentAuthForm: React.FC = () => {
   };
 
   const handleLogin = () => {
-    simulateLoading(() => {
-      console.log('Login:', formData);
-      alert('Logged in successfully!');
-      navigate('/studentdashboard/home'); // redirect to dashboard
-    });
-  };
+  simulateLoading(() => {
+    console.log("Login:", formData);
+    alert(`Logged in as ${formData.role}!`);
 
-  const handleSignUp = () => {
-    if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match');
-      return;
+    if (formData.role === "student") {
+      navigate("/studentdashboard/home");
+    } else if (formData.role === "alumni") {
+      navigate("/studentdashboard/alumni");
     }
-    simulateLoading(() => {
-      console.log('Sign Up:', formData);
-      alert('Signed up successfully!');
-      navigate('/studentdashboard/home'); // redirect to dashboard
-    });
-  };
+  });
+};
+
+const handleSignUp = () => {
+  if (formData.password !== formData.confirmPassword) {
+    alert("Passwords do not match");
+    return;
+  }
+
+  simulateLoading(() => {
+    console.log("Sign Up:", formData);
+    alert(`Signed up as ${formData.role}!`);
+
+    if (formData.role === "student") {
+      navigate("/studentdashboard/home");
+    } else if (formData.role === "alumni") {
+      navigate("/studentdashboard/alumni");
+    }
+  });
+};
+
 
   return (
     <div className="auth-container">
@@ -83,7 +97,16 @@ const StudentAuthForm: React.FC = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-              />
+              /> 
+              <select
+                name="role"
+                value={formData.role}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="student">Student</option>
+                <option value="alumni">Alumni</option>
+              </select><br />
               <input
                 type="password"
                 name="password"
@@ -141,6 +164,15 @@ const StudentAuthForm: React.FC = () => {
                 onChange={handleInputChange}
                 required
               />
+               <select
+                name="role"
+                value={formData.role}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="student">Student</option>
+                <option value="alumni">Alumni</option>
+              </select><br />
               <input
                 type="text"
                 name="uniqueId"

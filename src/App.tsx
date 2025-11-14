@@ -13,6 +13,8 @@ import BookshopPage from "./Students/DashboardPages/BookshopPage/BookshopPage";
 import SchoolOutfitsPages from "./Students/DashboardPages/SchoolOutfitsPages/SchoolOutfitsPages";
 import PayFeesPage from "./Students/DashboardPages/PayFeesPage/PayFeesPage";
 import PaymentHistoryPage from "./Students/DashboardPages/PaymentHistoryPage/PaymentHistoryPage";
+import AlumniCredentialRequest from "./Students/Alumni/AlumniCredentialRequest";
+import AdminStaffPortal from "./StaffPortal/AdminStaffPortal";
 
 function App() {
   const location = useLocation();
@@ -44,6 +46,10 @@ function App() {
          <Route path="/studentdashboard/uniforms" element={<SchoolOutfitsPages />} />
          <Route path="/studentdashboard/payment" element={<PayFeesPage />} />
          <Route path="/studentdashboard/paymenthistory" element={<PaymentHistoryPage />} />
+         {/* Alumni */}
+         <Route path="/studentdashboard/alumni" element={<AlumniCredentialRequest/>} />
+         {/* Staffs */}
+         <Route path="/AdminStaff" element={<AdminStaffPortal/>} />
       </Routes>
     </>
   );
