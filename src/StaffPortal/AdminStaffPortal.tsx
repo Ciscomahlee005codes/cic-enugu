@@ -13,7 +13,7 @@ const AdminStaffPortal: React.FC = () => {
       <div className="staff-category-wrapper">
         <div
           className="staff-card"
-          onClick={() => navigate("/staff/academic")}
+          onClick={() => navigate("/AdminStaff/list")}
         >
           <h2>Academic Staff</h2>
           <p>View, edit and manage all academic staff data.</p>
@@ -21,7 +21,7 @@ const AdminStaffPortal: React.FC = () => {
 
         <div
           className="staff-card"
-          onClick={() => navigate("/staff/nonacademic")}
+          onClick={() => navigate("/non-academic")}
         >
           <h2>Non-Academic Staff</h2>
           <p>View, edit and manage non-teaching staff records.</p>

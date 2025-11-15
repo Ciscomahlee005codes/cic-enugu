@@ -15,6 +15,10 @@ import PayFeesPage from "./Students/DashboardPages/PayFeesPage/PayFeesPage";
 import PaymentHistoryPage from "./Students/DashboardPages/PaymentHistoryPage/PaymentHistoryPage";
 import AlumniCredentialRequest from "./Students/Alumni/AlumniCredentialRequest";
 import AdminStaffPortal from "./StaffPortal/AdminStaffPortal";
+import AcademicStaffList from "./StaffPortal/AcademicStaffList";
+import AcademicStaffDetails from "./StaffPortal/AcademicStaffDetails"
+import NonAcademicStaffList from "./StaffPortal/NonAcademicStaffList"
+import NonAcademicStaffDetails from "./StaffPortal/NonAcademicStaffDetails"
 
 function App() {
   const location = useLocation();
@@ -50,6 +54,10 @@ function App() {
          <Route path="/studentdashboard/alumni" element={<AlumniCredentialRequest/>} />
          {/* Staffs */}
          <Route path="/AdminStaff" element={<AdminStaffPortal/>} />
+         <Route path="/AdminStaff/list" element={<AcademicStaffList />} />
+           <Route path="/staff/:id" element={<AcademicStaffDetails />} />
+           <Route path="/non-academic" element={<NonAcademicStaffList />} />
+           <Route path="/non-academic/:id" element={<NonAcademicStaffDetails />} />
       </Routes>
     </>
   );

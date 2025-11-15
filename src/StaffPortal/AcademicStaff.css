@@ -1,0 +1,114 @@
+/* GENERAL */
+.staff-container {
+  width: 90%;
+  margin: auto;
+  padding: 40px 0;
+  padding-top: 5.5rem;
+}
+
+.staff-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* GRID */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+/* STAFF CARD */
+.staff-card {
+  text-decoration: none;
+  color: #222;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+  border-color: #007bff;
+}
+
+.staff-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.staff-card .dept {
+  color: #007bff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* DETAILS PAGE */
+.staff-details-wrapper {
+  width: 90%;
+  margin: auto;
+  padding: 40px 0;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1rem;
+}
+
+.staff-details-card {
+  background: #fff;
+  margin-top: 20px;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.details-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+.staff-details-card h2 {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.7rem;
+}
+
+.role {
+  text-align: center;
+  color: #444;
+}
+
+.dept-large {
+  text-align: center;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* INFO GRID */
+.info-grid {
+  display: grid;
+  margin-top: 25px;
+  gap: 20px;
+}
+
+.info-grid h4 {
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.not-found {
+  text-align: center;
+  margin-top: 50px;
+}
