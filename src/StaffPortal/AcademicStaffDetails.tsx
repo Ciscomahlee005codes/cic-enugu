@@ -1,12 +1,12 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import "./AcademicStaff.css";
-import Acad1 from "../assets/Academic-1.jpg"
-import Acad2 from "../assets/Academic-2.jpg"
-import Acad3 from "../assets/Academic-3.jpg"
+import Acad1 from "../assets/Academic-1.jpg";
+import Acad2 from "../assets/Academic-2.jpg";
+import Acad3 from "../assets/Academic-3.jpg";
 
 const staffData = {
-  1: {
+  "1": {
     name: "Dr. Samuel Adewale",
     role: "Senior Lecturer",
     department: "Computer Science",
@@ -15,9 +15,9 @@ const staffData = {
     employmentDate: "12th February 2016",
     exitDate: "Still Active",
     disclosures: "None",
-    image: Acad1
+    image: Acad1,
   },
-  2: {
+  "2": {
     name: "Mrs. Ruth Daniel",
     role: "Head of Department",
     department: "Biochemistry",
@@ -26,9 +26,9 @@ const staffData = {
     employmentDate: "4th May 2012",
     exitDate: "Still Active",
     disclosures: "None",
-    image: Acad2
+    image: Acad2,
   },
-  3: {
+  "3": {
     name: "Prof. James Ojo",
     role: "Professor",
     department: "Mathematics",
@@ -37,13 +37,15 @@ const staffData = {
     employmentDate: "23rd Oct 2004",
     exitDate: "Still Active",
     disclosures: "None",
-    image: Acad3
+    image: Acad3,
   },
 };
 
 const AcademicStaffDetails: React.FC = () => {
   const { id } = useParams();
-  const staff = staffData[id as unknown as number];
+
+  // ✅ SAFE INDEXING (NO TS ERROR)
+  const staff = staffData[id as keyof typeof staffData];
 
   if (!staff) return <h2 className="not-found">Staff record not found.</h2>;
 
