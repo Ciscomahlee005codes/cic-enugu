@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import cicLogo from "../../assets/cic-logo.png"
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+   const location = useLocation();
 
+  // 🔥 Close menu whenever the route changes
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
   return (
     <header className="nav-container">
       <div className="nav-brand">
@@ -17,10 +22,11 @@ const Navbar: React.FC = () => {
         {/* ✅ Close Button */}
         <button className="close-btn" onClick={() => setMenuOpen(false)}>✕</button>
         
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/admission/portal">Admission</NavLink>
-        <NavLink to="/student/auth">Students</NavLink>
-        <NavLink to="/AdminStaff">Staff</NavLink>
+        <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
+        <NavLink to="/admission/portal" onClick={() => setMenuOpen(false)}>Admission</NavLink>
+        <NavLink to="/student/auth" onClick={() => setMenuOpen(false)}>Students</NavLink>
+        <NavLink to="/AdminStaff" onClick={() => setMenuOpen(false)}>Staff</NavLink>
+
         <button className="apply-btn">Apply Now</button>
       </nav>
 
