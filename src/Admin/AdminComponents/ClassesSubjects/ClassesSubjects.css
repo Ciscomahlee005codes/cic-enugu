@@ -1,0 +1,156 @@
+.classes-subjects {
+  padding: 30px;
+  background: #f5f8ff;
+  width: 100%;
+  min-height: 100vh;
+}
+
+h2 {
+  color: #1a2b6b;
+  margin-bottom: 20px;
+}
+
+/* Add Class */
+.add-class {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.add-class input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #d6d9e6;
+  font-size: 14px;
+}
+
+.add-class button {
+  background: #1a2b6b;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.add-class button:hover {
+  background: #003b73;
+}
+
+/* Class List */
+.class-item {
+  background: white;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
+
+.class-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.class-header h3 {
+  margin: 0;
+  color: #1a2b6b;
+}
+
+.subject-list {
+  list-style: none;
+  padding: 10px 16px;
+  border-top: 1px solid #eee;
+}
+
+.subject-list li {
+  padding: 8px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.subject-list li:hover {
+  background: #e7ecff;
+  border-radius: 6px;
+}
+
+/* Add Subject */
+.add-subject {
+  display: flex;
+  gap: 10px;
+  padding: 10px 16px;
+}
+
+.add-subject input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #d6d9e6;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.6);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+.modal {
+  background:white;
+  padding:25px 30px;
+  border-radius:12px;
+  width:90%;
+  max-width:400px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+.modal h3 {
+  margin-bottom: 12px;
+  color: #1a2b6b;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.modal-actions button:last-child {
+  margin-right: 0;
+}
+
+.modal-actions .edit {
+  background: #fbbc05;
+  color: white;
+}
+
+.modal-actions .delete {
+  background: #e53935;
+  color: white;
+}
+
+.modal-actions .close {
+  background: #d6d9e6;
+  color: #1a2b6b;
+}

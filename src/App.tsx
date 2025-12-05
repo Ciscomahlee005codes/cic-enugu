@@ -19,6 +19,13 @@ import AcademicStaffList from "./StaffPortal/AcademicStaffList";
 import AcademicStaffDetails from "./StaffPortal/AcademicStaffDetails"
 import NonAcademicStaffList from "./StaffPortal/NonAcademicStaffList"
 import NonAcademicStaffDetails from "./StaffPortal/NonAcademicStaffDetails"
+import AdminAuth from "./Admin/AdminComponents/AdminAuth/AdminAuth";
+import AdminHomePage from "./Admin/AdminPages/AdminHomePage/AdminHomePage";
+import ManageStudentPage from "./Admin/AdminPages/ManageStudentPage/ManageStudentPage";
+import ManageStaffPage from "./Admin/AdminPages/ManageStaffPage/ManageStaffPage";
+import ClassesSubjectPage from "./Admin/AdminPages/ClassesSubjectPage/ClassesSubjectPage";
+import NotificationPage from "./Admin/AdminPages/NotificationPage/NotificationPage";
+import Settings from "./Admin/AdminPages/Settings/Settings";
 
 function App() {
   const location = useLocation();
@@ -27,8 +34,10 @@ function App() {
   const hideNavbarRoutes = ["/student/auth"];
 
   const shouldHideNavbar =
-    hideNavbarRoutes.includes(location.pathname) ||
-    location.pathname.startsWith("/studentdashboard");
+  hideNavbarRoutes.includes(location.pathname) ||
+  location.pathname.startsWith("/studentdashboard") ||
+  location.pathname.startsWith("/admin");
+
 
   return (
     <>
@@ -58,6 +67,15 @@ function App() {
            <Route path="/staff/:id" element={<AcademicStaffDetails />} />
            <Route path="/non-academic" element={<NonAcademicStaffList />} />
            <Route path="/non-academic/:id" element={<NonAcademicStaffDetails />} />
+
+           {/* Admin Routes */}
+           <Route path="/admin/auth" element={<AdminAuth />} />
+            <Route path="/admindashboard/home" element={<AdminHomePage />} />
+            <Route path="/admindashboard/managestudents" element={<ManageStudentPage />} />
+            <Route path="/admindashboard/managestaff" element={<ManageStaffPage />} />
+            <Route path="/admindashboard/classessubject" element={<ClassesSubjectPage />} />
+            <Route path="/admindashboard/schoolupdates" element={<NotificationPage />} />
+            <Route path="/admindashboard/systemsettings" element={<Settings />} />
       </Routes>
     </>
   );

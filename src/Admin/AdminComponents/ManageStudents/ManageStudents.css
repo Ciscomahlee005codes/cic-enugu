@@ -1,0 +1,159 @@
+.manage-students {
+  padding: 30px;
+  background: #f5f8ff;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.manage-students h2 {
+  color: #1a2b6b;
+  margin-bottom: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d6d9e6;
+  font-size: 14px;
+}
+
+.search-bar .search-icon {
+  position: absolute;
+  right: 12px;
+  font-size: 16px;
+  color: #1a2b6b;
+}
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-bar select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d6d9e6;
+  font-size: 14px;
+  background: white;
+  color: #1a2b6b;
+  cursor: pointer;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,.08);
+}
+
+thead {
+  background: #1a2b6b;
+  color: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 14px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Status */
+.status-active {
+  color: #0f9d58;
+  font-weight: 600;
+}
+
+.status-inactive {
+  color: #e53935;
+  font-weight: 600;
+}
+
+/* Actions */
+.actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 8px;
+  padding: 6px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.actions .view {
+  color: #1a73e8;
+}
+.actions .view:hover {
+  background: #e7f0fe;
+}
+
+.actions .edit {
+  color: #fbbc05;
+}
+.actions .edit:hover {
+  background: #fff7e6;
+}
+
+.actions .delete {
+  color: #e53935;
+}
+.actions .delete:hover {
+  background: #fdecea;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead tr {
+    display: none;
+  }
+  tbody tr {
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,.08);
+  }
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #1a2b6b;
+  }
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
